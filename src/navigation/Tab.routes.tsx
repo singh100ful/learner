@@ -4,6 +4,7 @@ import {ProfileScreen} from '../screens/ProfileScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Pressable, Text, View} from 'react-native';
 import {DrawerRoutes} from './Drawer.routes';
+import {ListScreen} from '../screens/ListScreen';
 
 interface TabRoutesProps {}
 
@@ -84,7 +85,7 @@ export const TabRoutes: React.FC<TabRoutesProps> = ({}) => {
           headerShown: false,
         }}
         name="HomeTabScreen"
-        component={DrawerRoutes}
+        component={ListScreen}
       />
       <Tab.Screen
         options={{

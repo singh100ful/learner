@@ -32,6 +32,16 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
       .catch(err => console.log(err));
   }, []);
 
+  //Promise - pending, fulfilled, rejected
+
+  const promiseData = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('Fetched data');
+      }, 1000);
+    });
+  };
+
   const toggle = () => {
     setActive(!active);
   };
@@ -57,6 +67,19 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
   const [state, dispatch] = React.useReducer(counterReducer, {count: 0});
 
   const focused = useIsFocused();
+
+  console.log('Hello');
+
+  console.log('Hello world');
+
+  React.useEffect(() => {
+    promiseData()
+      .then(data => {
+        console.log(data);
+      })
+      .catch(err => console.log(err))
+      .finally(() => console.log('Finally'));
+  }, []);
 
   // useFocusEffect(
   //   React.useCallback(() => {
